@@ -1,0 +1,8 @@
+include ':app'
+
+// common (通用依赖库)
+include ':common:http'
+include ':common:image'
+include ':common:util'
+include ':common:recycleview'
+include ':common:multi-image-selector'

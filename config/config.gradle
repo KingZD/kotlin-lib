@@ -1,0 +1,85 @@
+ext {
+    android = [compileSdkVersion: 27,
+               buildToolsVersion: "27.0.0",
+               applicationId    : "com.zed.example",
+
+               minSdkVersion    : 15,
+               targetSdkVersion : 27,
+
+               isModule         : false, //isModule 是否是独立模块开发
+               isDebug          : false, //是否是调试模式
+               scheme           : "zed", // scheme
+               host             : "zed.example", // host
+
+               versionName      : "1.0.0",
+               versionCode      : 17112401
+    ]
+
+    dependencies = [//support
+                    "support-appcompat-v7"       : 'com.android.support:appcompat-v7:27.0.2',
+                    "support-v4"                 : 'com.android.support:support-v4:27.0.2',
+                    "support-annotations"        : 'com.android.support:support-annotations:27.0.2',
+                    "support-design"             : 'com.android.support:design:27.0.2',
+                    "support-constraint-layout"  : 'com.android.support.constraint:constraint-layout:1.0.2', //约束布局
+                    //glide
+                    "glide"                      : "com.github.bumptech.glide:glide:4.4.0",
+                    "glide-compiler"             : 'com.github.bumptech.glide:compiler:4.4.0',
+                    "glide-integration"          : "com.github.bumptech.glide:okhttp-integration:1.4.0@aar",
+                    "lifecycle-compiler"         : "android.arch.lifecycle:compiler:1.0.0",
+                    //retrofit
+                    "retrofit2"                  : "com.squareup.retrofit2:retrofit:2.2.0",
+                    "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:2.2.0",
+                    "retrofit2-adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:2.2.0",
+                    //okhttp
+                    "okhttp3-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.7.0",
+                    //stetho
+                    "stetho"                     : "com.facebook.stetho:stetho:1.5.0",
+                    "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:1.5.0",
+                    //gson
+                    "gson"                       : "com.google.code.gson:gson:2.8.0",
+                    //rx-android-java
+                    "rxjava"                     : "io.reactivex.rxjava2:rxjava:2.0.8",
+                    "rxandroid"                  : "io.reactivex.rxjava2:rxandroid:2.0.1",
+                    //rxlifecycle2
+                    "rxlifecycle"                : "com.trello.rxlifecycle2:rxlifecycle:2.0.1",
+                    "rxlifecycle-android"        : "com.trello.rxlifecycle2:rxlifecycle-android:2.0.1",
+                    "rxlifecycle-components"     : "com.trello.rxlifecycle2:rxlifecycle-components:2.0.1",
+                    //eventbus
+                    "eventbus"                   : "org.greenrobot:eventbus:3.0.0",
+                    // dexter 权限管理
+                    "dexter"                     : "com.karumi:dexter:4.1.0",
+                    //logger
+                    "logger"                     : "com.orhanobut:logger:1.15",
+                    //CollapsibleTextView 显示全文与隐藏功能
+                    "collapsibleTextView"        : "com.timqi.collapsibletextview:library:1.1.2",
+                    //walle
+                    "walle"                      : 'com.meituan.android.walle:library:1.0.3',
+                    //轮播
+                    "convenientbanner"           : 'com.bigkoo:convenientbanner:2.0.5',
+                    //数据加载组件
+                    "SmartRefreshLayout"         : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4',
+                    "SmartRefreshHeader"         : 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4',
+                    //分包
+                    "multidex"                   : 'com.android.support:multidex:1.0.2',
+                    //kotlin
+                    "kotlin"                     : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+                    //状态栏
+                    "statusbar"                  : "com.jaeger.statusbaruitl:library:1.4.0",
+                    //轮播
+                    "convenientbanner"           : 'com.bigkoo:convenientbanner:2.0.5',
+                    //选择器
+                    "pickerView"                 : 'com.contrarywind:Android-PickerView:3.2.7'
+
+
+    ]
+
+    //keystore
+    //证书指纹 (SHA1):
+    sign = [
+            storeFile    : "debug.jks",
+            storePassword: "123456",
+            keyAlias     : "key0",
+            keyPassword  : "123456"
+    ]
+
+}

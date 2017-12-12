@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+
+    signingConfigs {
+        release {
+            storeFile file(rootProject.ext.sign.storeFile)
+            keyAlias rootProject.ext.sign.keyAlias
+            keyPassword rootProject.ext.sign.keyPassword
+            storePassword rootProject.ext.sign.storePassword
+            //v1和v2的签名使用
+//            只勾选v1签名并不会影响什么，但是在7.0上不会使用更安全的验证方式
+//            只勾选V2签名7.0以下会直接安装完显示未安装，7.0以上则使用了V2的方式验证
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+//        manifestPlaceholders = [app_scheme: rootProject.ext.android.scheme,
+//                                app_host  : rootProject.ext.android.host]
+
+        // 开启分包模式
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            // 签名
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 是否开启apk zip优化
+            zipAlignEnabled true
+            manifestPlaceholders = [DEBUG: false]
+        }
+        debug {
+            // DEBUG 签名
+            signingConfig signingConfigs.release
+            manifestPlaceholders = [DEBUG: true]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //公用依赖
+    compile project(':common:http')
+}
