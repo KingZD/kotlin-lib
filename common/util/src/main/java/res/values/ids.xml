@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- StatusBarCompat -->
+    <item name="status_bar_view" type="id"/>
+    <item name="translucent_view" type="id"/>
+    <!-- RecyclerViewBanner -->
+    <item name="rvb_banner_image_view_id" type="id"/>
+</resources>

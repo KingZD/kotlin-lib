@@ -117,7 +117,5 @@ public abstract class HttpObserver<T> implements Observer<T> {
     /**
      * 请求结束的情况下会调用此函数
      */
-    protected void complete() {
-
-    }
+    protected abstract void complete();
 }

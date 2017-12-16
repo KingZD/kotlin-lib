@@ -1,11 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/viewBody"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_1" />
+
+    <RadioGroup
+        android:id="@+id/rgTab"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello Kotlin!" />
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <com.zed.example.gui.MyRadioButton
+            android:id="@+id/rbOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="@dimen/dimen_dp_5"
+            android:gravity="center|bottom"
+            android:onClick="showFragment"
+            android:paddingBottom="@dimen/dimen_dp_5"
+            android:paddingTop="@dimen/dimen_dp_5"
+            android:text="@string/tab_one"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dimen_sp_14" />
+
+        <com.zed.example.gui.MyRadioButton
+            android:id="@+id/rbTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawablePadding="@dimen/dimen_dp_5"
+            android:gravity="center|bottom"
+            android:onClick="showFragment"
+            android:paddingBottom="@dimen/dimen_dp_5"
+            android:paddingTop="@dimen/dimen_dp_5"
+            android:text="@string/tab_two"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dimen_sp_14" />
+
+        <com.zed.example.gui.MyRadioButton
+            android:id="@+id/rbThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawablePadding="@dimen/dimen_dp_5"
+            android:gravity="center|bottom"
+            android:onClick="showFragment"
+            android:paddingBottom="@dimen/dimen_dp_5"
+            android:paddingTop="@dimen/dimen_dp_5"
+            android:text="@string/tab_three"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dimen_sp_14" />
+
+        <com.zed.example.gui.MyRadioButton
+            android:id="@+id/rbFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawablePadding="@dimen/dimen_dp_5"
+            android:gravity="center|bottom"
+            android:onClick="showFragment"
+            android:paddingBottom="@dimen/dimen_dp_5"
+            android:paddingTop="@dimen/dimen_dp_5"
+            android:text="@string/tab_four"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dimen_sp_14" />
+
+        <com.zed.example.gui.MyRadioButton
+            android:id="@+id/rbFive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:button="@null"
+            android:drawablePadding="@dimen/dimen_dp_5"
+            android:gravity="center|bottom"
+            android:onClick="showFragment"
+            android:paddingBottom="@dimen/dimen_dp_5"
+            android:paddingTop="@dimen/dimen_dp_5"
+            android:text="@string/tab_five"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dimen_sp_14" />
+    </RadioGroup>
+
+</LinearLayout>

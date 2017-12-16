@@ -1,4 +1,4 @@
-package com.bytc.qudong.interfaces
+package com.zed.common.interfaces
 
 /**
  * @author zd

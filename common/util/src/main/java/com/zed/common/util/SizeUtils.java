@@ -1,5 +1,6 @@
 package com.zed.common.util;
 
+import android.content.Context;
 import android.graphics.Paint;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -83,6 +84,11 @@ public final class SizeUtils {
     public static float dip2px(int dpValue) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 dpValue, Utils.getApplicationContext().getResources().getDisplayMetrics());
+    }
+
+    public static float dip2px(Context context,int dpValue) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                dpValue,context.getResources().getDisplayMetrics());
     }
 
     public static float dip2px2(float dipValue) {

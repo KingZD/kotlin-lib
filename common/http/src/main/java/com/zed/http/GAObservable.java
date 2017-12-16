@@ -1,17 +1,18 @@
 package com.zed.http;
 
 
-import android.util.Log;
-
+import com.zed.common.util.LogUtils;
 import com.zed.http.rx.RxSchedulers;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.exceptions.CompositeException;
 import io.reactivex.exceptions.Exceptions;
 import io.reactivex.plugins.RxJavaPlugins;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -27,15 +28,11 @@ public class GAObservable<T> extends Observable<T> implements Disposable {
     }
 
 
-    public void execOnThread(Observer<? super T> observer, LifecycleTransformer transformer) {
-//        this.subscribeOn(Schedulers.io())
-//                .compose(RxSchedulers.<T>compose())
-//                .compose(transformer)
-//                .unsubscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(observer);
+    public void execOnThread(Observer<? super T> observer, LifecycleTransformer<T> transformer) {
+        compose(transformer)
+                .compose(RxSchedulers.<T>compose())
+                .subscribe(observer);
 
-        this.compose(RxSchedulers.<T>compose()).compose(transformer).subscribe(observer);
     }
 
     @Override
@@ -72,7 +69,7 @@ public class GAObservable<T> extends Observable<T> implements Disposable {
     @Override
     public void dispose() {
         originalCall.cancel();
-        Log.e("REQUEST",originalCall.request().url().toString()+" cancel");
+        LogUtils.e(originalCall.request().url().toString() + " cancel");
     }
 
     @Override

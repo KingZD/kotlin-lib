@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">kotlin-lib</string>
+    <!-- tab -->
+    <string name="tab_one">首页</string>
+    <string name="tab_two">需求</string>
+    <string name="tab_three">技能</string>
+    <string name="tab_four">动态</string>
+    <string name="tab_five">我的</string>
 </resources>

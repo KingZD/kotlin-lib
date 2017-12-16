@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShapeView">
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+        <attr name="centerColor" format="color" />
+        <!-- 阴影宽度 -->
+        <attr name="mShadowWidth" format="dimension" />
+        <!-- 是否圆角 -->
+        <attr name="mCornerRadiusEnable" format="boolean" />
+    </declare-styleable>
+
+</resources>

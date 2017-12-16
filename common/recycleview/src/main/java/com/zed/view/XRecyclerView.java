@@ -12,6 +12,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zed.common.interfaces.OnItemClickListener;
 import com.zed.common.util.LogUtils;
 
 import java.util.ArrayList;
@@ -223,12 +224,19 @@ public class XRecyclerView extends RecyclerView {
             if (isHeader(position)) {
                 return;
             }
-            int adjPosition = position - getHeadersCount();
+            final int adjPosition = position - getHeadersCount();
             int adapterCount;
             if (adapter != null) {
                 adapterCount = adapter.getItemCount();
                 if (adjPosition < adapterCount) {
                     adapter.onBindViewHolder(holder, adjPosition);
+                    holder.itemView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (onItemClickListener != null)
+                                onItemClickListener.onItemClick(view, adjPosition);
+                        }
+                    });
                 }
             }
         }
@@ -239,7 +247,7 @@ public class XRecyclerView extends RecyclerView {
             if (isHeader(position)) {
                 return;
             }
-            int adjPosition = position - getHeadersCount();
+            final int adjPosition = position - getHeadersCount();
             int adapterCount;
             if (adapter != null) {
                 adapterCount = adapter.getItemCount();
@@ -249,6 +257,13 @@ public class XRecyclerView extends RecyclerView {
                     } else {
                         adapter.onBindViewHolder(holder, adjPosition, payloads);
                     }
+                    holder.itemView.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (onItemClickListener != null)
+                                onItemClickListener.onItemClick(view, adjPosition);
+                        }
+                    });
                 }
             }
         }
@@ -528,5 +543,11 @@ public class XRecyclerView extends RecyclerView {
 
     public int getHeaderViewSize() {
         return mHeaderViews.size();
+    }
+
+    private OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener l) {
+        this.onItemClickListener = l;
     }
 }

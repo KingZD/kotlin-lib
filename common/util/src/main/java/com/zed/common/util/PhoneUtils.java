@@ -111,7 +111,7 @@ public final class PhoneUtils {
      *
      * @return IMEI码
      */
-    @SuppressLint("HardwareIds")
+    @SuppressLint({"HardwareIds", "MissingPermission"})
     public static String getIMEI() {
         TelephonyManager tm = (TelephonyManager) Utils.getApplicationContext()
                 .getSystemService(Context.TELEPHONY_SERVICE);
@@ -131,7 +131,7 @@ public final class PhoneUtils {
      *
      * @return IMSI码
      */
-    @SuppressLint("HardwareIds")
+    @SuppressLint({"HardwareIds", "MissingPermission"})
     public static String getIMSI() {
         TelephonyManager tm = (TelephonyManager) Utils.getApplicationContext()
                 .getSystemService(Context.TELEPHONY_SERVICE);

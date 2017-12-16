@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_height">45dp</dimen>
+
+    <dimen name="dimen_dp_0">0dp</dimen>
+    <dimen name="dimen_dp_1">1dp</dimen>
+    <dimen name="dimen_dp_3">3dp</dimen>
+    <dimen name="dimen_dp_5">5dp</dimen>
+    <dimen name="dimen_dp_7">7dp</dimen>
+    <dimen name="dimen_dp_8">8dp</dimen>
+    <dimen name="dimen_dp_10">10dp</dimen>
+    <dimen name="dimen_dp_11">11dp</dimen>
+    <dimen name="dimen_dp_12">12dp</dimen>
+    <dimen name="dimen_dp_13">13dp</dimen>
+    <dimen name="dimen_dp_15">15dp</dimen>
+    <dimen name="dimen_dp_20">20dp</dimen>
+    <dimen name="dimen_dp_22">22dp</dimen>
+    <dimen name="dimen_dp_24">24dp</dimen>
+    <dimen name="dimen_dp_26">26dp</dimen>
+    <dimen name="dimen_dp_29">29dp</dimen>
+    <dimen name="dimen_dp_30">30dp</dimen>
+    <dimen name="dimen_dp_35">35dp</dimen>
+    <dimen name="dimen_dp_40">40dp</dimen>
+    <dimen name="dimen_dp_41">41dp</dimen>
+    <dimen name="dimen_dp_45">45dp</dimen>
+    <dimen name="dimen_dp_49">49dp</dimen>
+    <dimen name="dimen_dp_55">55dp</dimen>
+    <dimen name="dimen_dp_60">60dp</dimen>
+    <dimen name="dimen_dp_65">65dp</dimen>
+    <dimen name="dimen_dp_70">70dp</dimen>
+    <dimen name="dimen_dp_77">77dp</dimen>
+    <dimen name="dimen_dp_80">80dp</dimen>
+    <dimen name="dimen_dp_100">100dp</dimen>
+    <dimen name="dimen_dp_110">110dp</dimen>
+    <dimen name="dimen_dp_115">115dp</dimen>
+    <dimen name="dimen_dp_120">120dp</dimen>
+    <dimen name="dimen_dp_160">160dp</dimen>
+    <dimen name="dimen_dp_180">180dp</dimen>
+    <dimen name="dimen_dp_235">235dp</dimen>
+    <dimen name="dimen_dp_240">240dp</dimen>
+
+    <dimen name="dimen_sp_18">18sp</dimen>
+    <dimen name="dimen_sp_16">16sp</dimen>
+    <dimen name="dimen_sp_12">12sp</dimen>
+    <dimen name="dimen_sp_11">11sp</dimen>
+    <dimen name="dimen_sp_14">14sp</dimen>
+
+    <dimen name="statusbar_view_height">0dp</dimen>
+</resources>

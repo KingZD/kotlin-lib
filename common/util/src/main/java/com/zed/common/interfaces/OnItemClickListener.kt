@@ -1,5 +1,6 @@
-package com.bytc.qudong.interfaces
+package com.zed.common.interfaces
 
+import android.view.View
 
 
 /**
@@ -11,6 +12,6 @@ package com.bytc.qudong.interfaces
  * @describe TODO
  * @email 1053834336@qq.com
  */
-interface OnItemClickListener<T,M> {
-    fun onItemClick(viewHolder: T, data: M?, position: Int)
+interface OnItemClickListener {
+    fun onItemClick(v: View, position: Int)
 }
