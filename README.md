@@ -2,6 +2,12 @@
 
 常用依赖包转换成kotlin版本
 =============
+>## 添加两种阴影效果
+|描述|效果|
+|---|---|
+|`1.三色光晕效果`|`2.普通光晕效果`|
+|![shapeView](../master/example/shapeView.gif "shapeView")|![shapeLayer](../master/example/shapeLayer.gif "shapeLayer")|
+
 
 ># 这周目标 
 >1.提取公用依赖  
