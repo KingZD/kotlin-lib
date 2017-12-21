@@ -37,7 +37,6 @@ class ShapeView : ViewGroup {
     private var mCornerRadius = 0f
     /**组件背景色**/
     private var shapeBackground = ContextCompat.getColor(context, R.color.color_ffffff)
-    private var shapeBitmapShader: BitmapShader? = null
     /**默认阴影起始颜色**/
     private var startColor = ContextCompat.getColor(context, R.color.color_ffffff)
     /**默认阴影中间颜色**/
@@ -76,6 +75,31 @@ class ShapeView : ViewGroup {
     fun setCornerRadius(mCornerRadius: Int) {
         this.mCornerRadius = SizeUtils.dip2px(if (mCornerRadius == 0) 2 else mCornerRadius)
         this.mShadowWidth = this.mCornerRadius / 2
+        postInvalidate()
+    }
+
+    /**设置中间颜色起始百分比位置**/
+    fun shapeCenterPosition(centerPosition: Float) {
+        this.centerPosition = centerPosition
+        stops[1] = centerPosition
+        postInvalidate()
+    }
+
+    fun shapeCenterColor(centerColor: Int) {
+        this.centerColor = centerColor
+        colors[1] = centerColor
+        postInvalidate()
+    }
+
+    fun shapeStartColor(startColor: Int) {
+        this.startColor = startColor
+        colors[0] = startColor
+        postInvalidate()
+    }
+
+    fun shapeEndColor(endColor: Int) {
+        this.endColor = endColor
+        colors[2] = endColor
         postInvalidate()
     }
 
@@ -175,7 +199,6 @@ class ShapeView : ViewGroup {
             mCornerRadiusEnable = typeArray!!.getBoolean(R.styleable.ShapeView_mCornerRadiusEnable, mCornerRadiusEnable)
         }
         paint = Paint(Paint.FILTER_BITMAP_FLAG or Paint.ANTI_ALIAS_FLAG)
-        shapeBitmapShader = BitmapShader(bitmap, CLAMP, CLAMP)
         colors = intArrayOf(startColor, centerColor, endColor)
         stops = floatArrayOf(startPosition, centerPosition, endPosition)
         paint.isAntiAlias = true
@@ -219,7 +242,7 @@ class ShapeView : ViewGroup {
         paint.reset()
         /**--------------------------------------背景-----------------------------------------**/
 
-        paint.shader = shapeBitmapShader
+        paint.shader = BitmapShader(bitmap, CLAMP, CLAMP)
         paint.isAntiAlias = true
         if (mCornerRadiusEnable)
             canvas?.drawRoundRect(RectF(mShadowWidth, mShadowWidth, rect.width() - mShadowWidth, rect.height() - mShadowWidth), mShadowWidth * (1 - centerPosition), mShadowWidth * (1 - centerPosition), paint)

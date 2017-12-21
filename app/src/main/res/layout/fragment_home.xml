@@ -85,4 +85,16 @@
             android:max="100"
             android:progress="10" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="换个颜色" />
+
+    <Button
+        android:id="@+id/position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="颜色起始百分比:0.1" />
 </LinearLayout>
