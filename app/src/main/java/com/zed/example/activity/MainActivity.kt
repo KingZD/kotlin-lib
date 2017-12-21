@@ -4,6 +4,7 @@ import android.view.View
 import com.zed.example.R
 import com.zed.example.base.BaseActivity
 import com.zed.example.fragment.HomeFragment
+import com.zed.example.fragment.SecondFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -19,7 +20,7 @@ class MainActivity : BaseActivity() {
 
     //"同一模块下可见"
     private var homeFragment: HomeFragment? = null
-
+    private var secondFragment: SecondFragment? = null
     override fun setLayoutId(): Int {
         return R.layout.activity_main
     }
@@ -39,8 +40,8 @@ class MainActivity : BaseActivity() {
             homeFragment = homeFragment ?: HomeFragment()
             repalce(homeFragment)
         } else if (checkedId == R.id.rbTwo && oCid != R.id.rbTwo) {
-            homeFragment = homeFragment ?: HomeFragment()
-            repalce(homeFragment)
+            secondFragment = secondFragment ?: SecondFragment()
+            repalce(secondFragment)
         } else if (checkedId == R.id.rbThree && oCid != R.id.rbThree) {
             homeFragment = homeFragment ?: HomeFragment()
             repalce(homeFragment)

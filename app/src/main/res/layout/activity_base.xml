@@ -17,10 +17,15 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
+    <include
+        layout="@layout/view_empty_re"
+        android:visibility="gone" />
+
     <com.zed.example.viewgroup.ViewTitle
         android:id="@+id/appTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fake_status_bar" />
 
     <FrameLayout
         android:id="@+id/flBody"

@@ -8,6 +8,25 @@
         <attr name="mShadowWidth" format="dimension" />
         <!-- 是否圆角 -->
         <attr name="mCornerRadiusEnable" format="boolean" />
+        <attr name="startPosition" format="float" />
+        <attr name="endPosition" format="float" />
+        <attr name="centerPosition" format="float" />
+        <attr name="shapeBackground" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="ShapeLayer">
+        <!-- 阴影宽度 -->
+        <attr name="mShapeLayerWidth" format="dimension" />
+        <!-- 是否圆角 -->
+        <attr name="mShapeLayerCornerRadiusEnable" format="boolean" />
+        <!-- 组件背景色 -->
+        <attr name="mShapeLayerBackground" format="color" />
+        <!-- 阴影颜色 -->
+        <attr name="mShapeLayerColor" format="color" />
+        <!-- 偏移量 -->
+        <attr name="mOffsetX" format="dimension" />
+        <attr name="mOffsetY" format="dimension" />
+        <!-- 圆角角度 -->
+        <attr name="mShapeLayerCornerRadius" format="dimension" />
+    </declare-styleable>
 </resources>

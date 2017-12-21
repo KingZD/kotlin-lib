@@ -1,12 +1,8 @@
 package com.zed.example.fragment
 
-import android.graphics.drawable.BitmapDrawable
-import android.support.v4.content.ContextCompat
-import com.zed.common.util.SizeUtils
+import android.widget.SeekBar
 import com.zed.example.R
 import com.zed.example.base.BaseFragment
-import com.zed.image.round.CornerType
-import com.zed.image.round.RoundedBitmapDrawableFactory
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -24,10 +20,18 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initView() {
-        val bd = ContextCompat.getDrawable(activity!!.applicationContext, R.mipmap.ic_login_head_bg) as BitmapDrawable
-        val rb = RoundedBitmapDrawableFactory.create(resources, bd.bitmap, CornerType.ALL)
-        rb.cornerRadius = SizeUtils.dip2px(10)
-        svBg.setImageDrawable(rb)
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                sv.setShadowWidth(p1)
+                skSize.text = "阴影大小:".plus(p1)
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+            }
+        })
     }
 
 }
