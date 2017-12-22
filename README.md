@@ -18,3 +18,5 @@
 
 >#### 目前项目依赖的组件配置在
 >[config.gradle](https://github.com/KingZD/kotlin-lib/blob/master/config/config.gradle "config.gradle")
+
+>[安卓中国](https://developer.android.google.cn/index.html "安卓中国")
