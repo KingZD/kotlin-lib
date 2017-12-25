@@ -33,6 +33,7 @@ android {
 
         // 开启分包模式
         multiDexEnabled true
+
     }
     buildTypes {
         release {
