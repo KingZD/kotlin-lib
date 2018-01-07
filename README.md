@@ -1,5 +1,11 @@
 # kotlin-lib  
 
+如果提示找不到jks 请将example目录下的  
+debug.jks.去掉后缀 更名为 debug.jks  
+放到app目录下
+==
+
+
 常用依赖包转换成kotlin版本
 =============
 >## 添加两种阴影效果
