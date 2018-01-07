@@ -19,6 +19,7 @@ debug.jks.去掉后缀 更名为 debug.jks
 |---|---|
 |`1.各种圆角图标` </br> `2.圆形图标`|![imgCorner](../master/example/imgCorner.gif "imgCorner")|
 
+图片圆角使用glide+MyRoundedBitmapDrawable 处理
 
 ># 这周目标 
 >1.提取公用依赖  
