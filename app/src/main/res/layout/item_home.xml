@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dimen_dp_10"
+    android:background="@drawable/home_item_bg"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/ivImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/test" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivImg"
+        android:padding="@dimen/dimen_dp_5">
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_dp_5"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="小马小马小马小马小马小马小马小马小马小马小马小马小马小马小马小马小马小马"
+            android:textColor="@color/color_666666" />
+
+        <TextView
+            android:id="@+id/tvOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvContent"
+            android:layout_marginTop="@dimen/dimen_dp_8"
+            android:drawableLeft="@mipmap/ic_order"
+            android:drawablePadding="@dimen/dimen_dp_7"
+            android:drawableStart="@mipmap/ic_order"
+            android:text="12" />
+
+        <TextView
+            android:id="@+id/tvLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvOrder"
+            android:layout_below="@+id/tvContent"
+            android:layout_marginLeft="@dimen/dimen_dp_15"
+            android:layout_marginStart="@dimen/dimen_dp_15"
+            android:layout_toEndOf="@+id/tvOrder"
+            android:layout_toRightOf="@+id/tvOrder"
+            android:drawableLeft="@mipmap/ic_like"
+            android:drawablePadding="@dimen/dimen_dp_7"
+            android:drawableStart="@mipmap/ic_like"
+            android:text="3" />
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="@dimen/dimen_dp_40"
+            android:layout_height="@dimen/dimen_dp_40"
+            android:layout_below="@+id/tvOrder"
+            android:layout_marginTop="@dimen/dimen_dp_10"
+            android:src="@mipmap/ic_user_default" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivIcon"
+            android:layout_marginLeft="@dimen/dimen_dp_7"
+            android:layout_marginStart="@dimen/dimen_dp_7"
+            android:layout_toEndOf="@+id/ivIcon"
+            android:layout_toRightOf="@+id/ivIcon"
+            android:text="abc"
+            android:textColor="@color/color_666666" />
+
+        <TextView
+            android:id="@+id/tvSex"
+            style="@style/age_girl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivIcon"
+            android:layout_alignLeft="@+id/tvName"
+            android:layout_alignStart="@+id/tvName"
+            android:layout_toEndOf="@+id/ivIcon"
+            android:layout_toRightOf="@+id/ivIcon"
+            android:text="24" />
+
+        <View
+            android:id="@+id/vOne"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_dp_1"
+            android:layout_below="@+id/ivIcon"
+            android:layout_marginTop="@dimen/dimen_dp_10"
+            android:background="@color/color_cccccc" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vOne"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dimen_sp_12"
+            android:layout_marginTop="@dimen/dimen_dp_5"
+            android:src="@mipmap/ic_item_invite" />
+    </RelativeLayout>
+</RelativeLayout>

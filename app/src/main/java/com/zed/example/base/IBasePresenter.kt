@@ -10,7 +10,7 @@ package com.zed.example.base
  * @describe TODO
  * @email 1053834336@qq.com
  */
-internal interface IBasePresenter<T : IBaseConstruction> {
+internal interface IBasePresenter<out T : IBaseConstruction> {
     fun getView(): T?
     fun onDestory()
     fun init()

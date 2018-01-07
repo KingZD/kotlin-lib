@@ -5,6 +5,7 @@ import com.zed.example.R
 import com.zed.example.base.BaseActivity
 import com.zed.example.fragment.HomeFragment
 import com.zed.example.fragment.SecondFragment
+import com.zed.example.fragment.ThirdFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -21,6 +22,7 @@ class MainActivity : BaseActivity() {
     //"同一模块下可见"
     private var homeFragment: HomeFragment? = null
     private var secondFragment: SecondFragment? = null
+    private var thirdFragment: ThirdFragment? = null
     override fun setLayoutId(): Int {
         return R.layout.activity_main
     }
@@ -43,8 +45,8 @@ class MainActivity : BaseActivity() {
             secondFragment = secondFragment ?: SecondFragment()
             repalce(secondFragment)
         } else if (checkedId == R.id.rbThree && oCid != R.id.rbThree) {
-            homeFragment = homeFragment ?: HomeFragment()
-            repalce(homeFragment)
+            thirdFragment = thirdFragment ?: ThirdFragment()
+            repalce(thirdFragment)
         } else if (checkedId == R.id.rbFour && oCid != R.id.rbFour) {
             homeFragment = homeFragment ?: HomeFragment()
             repalce(homeFragment)

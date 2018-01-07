@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.view_empty_re.*
 abstract class BaseActivity : RxAppCompatActivity(), UIActivityConstraint {
     protected var TAG: String = javaClass.name
     private var fm: FragmentManager? = null
-    private var mCurrentFragment: BaseFragment? = null
+    private var mCurrentFragment: BaseFragment<*>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ abstract class BaseActivity : RxAppCompatActivity(), UIActivityConstraint {
     }
 
     //替换fragment
-    fun repalce(fragment: BaseFragment?) {
+    fun repalce(fragment: BaseFragment<*>?) {
         val layoutId = setLayoutId()
         val id = if (layoutId > 0) R.id.viewBody else R.id.flBody
         //?: 表达式就相当于一个简写的 if 语句。如果 ?: 左边的表达式不是 null，则返回左边的结果，否则返回 ?: 右边的表达式。
@@ -73,7 +73,7 @@ abstract class BaseActivity : RxAppCompatActivity(), UIActivityConstraint {
         return this
     }
 
-    fun getCurrentFragment(): BaseFragment? {
+    fun getCurrentFragment(): BaseFragment<*>? {
         return mCurrentFragment
     }
 

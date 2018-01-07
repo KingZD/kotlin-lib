@@ -75,4 +75,27 @@
         <item name="android:activityCloseEnterAnimation">@anim/slide_in_from_left</item>
         <item name="android:activityCloseExitAnimation">@anim/slide_out_to_right</item>
     </style>
+
+
+    <style name="age_girl">
+        <item name="android:width">@dimen/dimen_dp_35</item>
+        <item name="android:height">@dimen/dimen_dp_15</item>
+        <item name="android:background">@mipmap/ic_girl_age</item>
+        <item name="android:gravity">center|end</item>
+        <item name="android:paddingEnd">@dimen/dimen_dp_5</item>
+        <item name="android:paddingRight">@dimen/dimen_dp_5</item>
+        <item name="android:textColor">@color/color_dc8199</item>
+        <item name="android:textSize">@dimen/dimen_sp_12</item>
+    </style>
+
+    <style name="age_boy">
+        <item name="android:width">@dimen/dimen_dp_35</item>
+        <item name="android:height">@dimen/dimen_dp_15</item>
+        <item name="android:background">@mipmap/ic_boy_age</item>
+        <item name="android:gravity">center|end</item>
+        <item name="android:paddingEnd">@dimen/dimen_dp_5</item>
+        <item name="android:paddingRight">@dimen/dimen_dp_5</item>
+        <item name="android:textColor">@color/color_7298c8</item>
+        <item name="android:textSize">@dimen/dimen_sp_12</item>
+    </style>
 </resources>

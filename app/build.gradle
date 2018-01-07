@@ -34,13 +34,29 @@ android {
         // 开启分包模式
         multiDexEnabled true
 
+        // 使用Cmake工具
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+                //生成多个版本的so文件
+//                abiFilters 'arm64-v8a','armeabi-v7a','x86','x86_64'
+            }
+        }
     }
+
+    // 配置CMakeLists.txt路径
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"  // 设置所要编写的c源码位置，以及编译后so文件的名字
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             // 签名
             signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             // 是否开启apk zip优化
             zipAlignEnabled true
             manifestPlaceholders = [DEBUG: false]
@@ -61,4 +77,5 @@ dependencies {
     compile rootProject.ext.dependencies["statusbar"]
     //分包
     compile rootProject.ext.dependencies["multidex"]
+    compile rootProject.ext.dependencies["rebound"]
 }

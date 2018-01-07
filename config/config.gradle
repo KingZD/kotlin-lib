@@ -65,11 +65,12 @@ ext {
                     "kotlin"                     : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
                     //状态栏
                     "statusbar"                  : "com.jaeger.statusbaruitl:library:1.4.0",
-                    //轮播
-                    "convenientbanner"           : 'com.bigkoo:convenientbanner:2.0.5',
                     //选择器
-                    "pickerView"                 : 'com.contrarywind:Android-PickerView:3.2.7'
-
+                    "pickerView"                 : 'com.contrarywind:Android-PickerView:3.2.7',
+                    //弹性
+                    "rebound"                    : 'com.facebook.rebound:rebound:0.3.8',
+                    //跑马灯
+                    "marqueelibrary"             : 'com.gongwen:marqueelibrary:1.1.2'
 
     ]
 

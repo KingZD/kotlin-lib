@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_4c4c4c"
+    android:orientation="vertical">
+
+    <com.zed.example.gui.ShapeView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_dp_14"
+        app:centerColor="@color/color_edeaeb"
+        app:endColor="@color/transparent"
+        app:mShadowWidth="@dimen/dimen_dp_10"
+        app:shapeBackground="@color/color_ffffff"
+        app:startColor="@color/color_ff4979">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sign"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_dp_19"
+                android:layout_marginTop="@dimen/dimen_dp_17"
+                android:text="我的账户"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dimen_sp_17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_dp_19"
+                android:layout_marginTop="@dimen/dimen_dp_17"
+                android:text="我的账户"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dimen_sp_17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_dp_19"
+                android:layout_marginTop="@dimen/dimen_dp_17"
+                android:text="我的账户"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dimen_sp_17" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_dp_17"
+                android:layout_marginLeft="@dimen/dimen_dp_19"
+                android:layout_marginTop="@dimen/dimen_dp_17"
+                android:text="我的账户"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dimen_sp_17" />
+        </LinearLayout>
+    </com.zed.example.gui.ShapeView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/skSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_dp_17"
+            android:layout_marginLeft="@dimen/dimen_dp_19"
+            android:layout_marginTop="@dimen/dimen_dp_17"
+            android:text="阴影大小:10"
+            android:textSize="@dimen/dimen_sp_17" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="10" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="换个颜色" />
+
+    <Button
+        android:id="@+id/position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="颜色起始百分比:0.1" />
+</LinearLayout>

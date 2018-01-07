@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.SeekBar
 import com.zed.example.R
 import com.zed.example.base.BaseFragment
+import com.zed.example.base.BasePresenter
 import kotlinx.android.synthetic.main.fragment_second.*
 import java.util.*
 
@@ -17,7 +18,7 @@ import java.util.*
  * @describe TODO
  * @email 1053834336@qq.com
  */
-class SecondFragment : BaseFragment(), View.OnClickListener {
+class SecondFragment : BaseFragment<BasePresenter<*, *>>(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.r -> sv.cornerRadiusEnable(true)

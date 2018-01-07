@@ -1,12 +1,12 @@
 package com.zed.example.fragment
 
-import android.graphics.Color
-import android.view.View
-import android.widget.SeekBar
+import com.bytc.qudong.control.fragment.UIHomeConstraint
+import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.zed.example.R
 import com.zed.example.base.BaseFragment
+import com.zed.example.presenter.HomePresenter
+import com.zed.view.XRecyclerView
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.*
 
 /**
  * @author zd
@@ -17,40 +17,21 @@ import java.util.*
  * @describe TODO
  * @email 1053834336@qq.com
  */
-class HomeFragment : BaseFragment(), View.OnClickListener {
+class HomeFragment : BaseFragment<HomePresenter>(), UIHomeConstraint {
+    override fun getRlView(): XRecyclerView? {
+        return rv
+    }
+
+    override fun getSmartPull(): SmartRefreshLayout? {
+        return smartPull
+    }
+
     override fun setLayoutId(): Int {
         return R.layout.fragment_home
     }
 
-    override fun onClick(p0: View?) {
-        when (p0?.id) {
-            R.id.color -> {
-                sv.shapeStartColor(Color.rgb(Random().nextInt(255), Random().nextInt(255), Random().nextInt(255)))
-                sv.shapeCenterColor(Color.rgb(Random().nextInt(155), Random().nextInt(155), Random().nextInt(155)))
-            }
-            R.id.position -> {
-                val float = Random().nextFloat()
-                sv.shapeCenterPosition(float)
-                position.text = "颜色起始百分比:".plus(float)
-            }
-        }
-    }
-
     override fun initView() {
-        color.setOnClickListener(this)
-        position.setOnClickListener(this)
-        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                sv.setShadowWidth(p1)
-                skSize.text = "阴影大小:".plus(p1)
-            }
-
-            override fun onStartTrackingTouch(p0: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {
-            }
-        })
+        setPresenter(HomePresenter(this))
     }
 
 }

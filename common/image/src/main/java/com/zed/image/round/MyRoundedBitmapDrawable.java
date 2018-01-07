@@ -307,11 +307,6 @@ public abstract class MyRoundedBitmapDrawable extends Drawable {
                     canvas.drawRect(new RectF(0f, 0f, mDstRectF.width(), mDstRectF.height()), mPaint);
             }
         }
-        drawL(bitmap, canvas);
-    }
-
-    private void drawL(Bitmap bitmap, @NonNull Canvas canvas) {
-        canvas.drawBitmap(bitmap, null, mDstRect, mPaint);
     }
 
     @Override

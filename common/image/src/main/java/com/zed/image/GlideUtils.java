@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.GenericTransitionOptions;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.bumptech.glide.request.transition.Transition;
@@ -28,6 +29,7 @@ import java.io.File;
  */
 public class GlideUtils {
 
+    private int error;
     private int placeHolderId;
     private int resId;
     private String path;
@@ -47,10 +49,11 @@ public class GlideUtils {
         GlideRequest<Bitmap> transition = request.asBitmap()
                 .override(width, height)
                 .placeholder(placeHolderId)
+                .error(error)
                 .transition(GenericTransitionOptions.with(android.R.anim.fade_in))
                 .dontTransform()
                 .dontAnimate()
-                .skipMemoryCache(true);
+                .diskCacheStrategy(DiskCacheStrategy.ALL);
         if (file != null)
             transition.load(file);
         if (resId > 0)
@@ -220,6 +223,11 @@ public class GlideUtils {
             return builder;
         }
 
+        public Builder error(int resId) {
+            app.error = resId;
+            return builder;
+        }
+
         /**
          * 左上
          */
@@ -329,6 +337,10 @@ public class GlideUtils {
             return builder;
         }
 
+        public Builder cornerType(CornerType cornerType) {
+            app.cornerType = (cornerType == null ? CornerType.NONE : cornerType);
+            return builder;
+        }
 
         public void into(ImageView v) {
             app.loadImg(v);

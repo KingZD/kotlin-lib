@@ -11,6 +11,7 @@ import com.trello.rxlifecycle2.LifecycleTransformer
 import com.trello.rxlifecycle2.android.FragmentEvent
 import com.zed.common.util.UiUtil
 import com.zed.example.control.activity.UIActivityConstraint
+import com.zed.example.net.bean.BaseBean
 import java.util.*
 
 /**
@@ -22,11 +23,15 @@ import java.util.*
  * @describe TODO
  * @email 1053834336@qq.com
  */
-abstract class BaseFragment : RxFragment(), UIActivityConstraint {
-
+abstract class BaseFragment<in T : BasePresenter<*, *>> : RxFragment(), UIActivityConstraint {
+    private var presenter: T? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return UiUtil.inflate(context, setLayoutId(), container, false)
+    }
+
+    fun setPresenter(presenter: T) {
+        this.presenter = presenter
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,7 +48,7 @@ abstract class BaseFragment : RxFragment(), UIActivityConstraint {
     override fun clickTitle() {
     }
 
-    override fun <T>getHttpLifeRecycle(): LifecycleTransformer<T> {
+    override fun <T> getHttpLifeRecycle(): LifecycleTransformer<T> {
         return this.bindUntilEvent(FragmentEvent.STOP)
     }
 
@@ -60,5 +65,11 @@ abstract class BaseFragment : RxFragment(), UIActivityConstraint {
 
     fun setStatusBarImmersiveInCoordinatorLayout() {
         StatusBarUtil.setTranslucentForCoordinatorLayout(activity, 0)
+    }
+
+    override fun onDestroyView() {
+        presenter?.onDestory()
+        presenter = null
+        super.onDestroyView()
     }
 }

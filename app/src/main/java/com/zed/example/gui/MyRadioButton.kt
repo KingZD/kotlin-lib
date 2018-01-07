@@ -76,8 +76,8 @@ class MyRadioButton : RadioButton {
     private fun press() {
         if (mViewWidth == 0) return
         paint.shader = LinearGradient(s, 0f, s + mTextWidth, r.height().toFloat() / 2
-                , ContextCompat.getColor(context, R.color.color_ff9966)
-                , ContextCompat.getColor(context, R.color.color_ff4979)
+                , ContextCompat.getColor(context, R.color.color_000000)
+                , ContextCompat.getColor(context, R.color.color_ef3c40)
                 , Shader.TileMode.CLAMP) //边缘融合
         postInvalidate()
     }
