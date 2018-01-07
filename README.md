@@ -14,6 +14,11 @@ debug.jks.去掉后缀 更名为 debug.jks
 |`1.三色光晕效果`|`2.普通光晕效果`|
 |![shapeView](../master/example/shapeView.gif "shapeView")|![shapeLayer](../master/example/shapeLayer.gif "shapeLayer")|
 
+>## 图片圆角使用
+|描述|效果|
+|---|---|
+|`1.各种圆角图标` </br> `2.圆形图标`|![imgCorner](../master/example/imgCorner.gif "imgCorner")|
+
 
 ># 这周目标 
 >1.提取公用依赖  
